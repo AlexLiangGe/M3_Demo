@@ -7,58 +7,75 @@
   <title>HealthyPaw</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="index.css">
+  <style>
+    body {
+      background-image: url('./assets/bg.jpg');
+      height: 100vh;
+      background-repeat: no-repeat;
+      /* 可选，防止图片平铺 */
+      background-position: center center;
+      /* 可选，将图片居中 */
+      background-size: cover;
+      /* 可选，让图片填充整个背景 */
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="products-btns">
-    <button id="registerButton" class="button is-dark">Register</button>
-    <button id="loginButton" class="button is-dark">Login</button>
+  <div class="products-btns" style="display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;">
+    <button id="registerButton" class="button" style="width: 400px;margin-bottom: 10px;">Register</button>
+    <button id="loginButton" class="button" style="width: 400px;">Login</button>
   </div>
   <div>
     <!-- login -->
-  <div id="loginModal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Login</p>
-        <button class="delete" aria-label="close" id="closeLoginModal"></button>
-      </header>
-      <section class="modal-card-body">
-        <form id="loginForm">
-          <label for="loginUsername">Username:</label>
-          <input type="text" id="loginUsername" required>
-          <label for="loginPassword">Password:</label>
-          <input type="password" id="loginPassword" required>
-        </form>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success" type="submit" form="loginForm">Login</button>
-      </footer>
+    <div id="loginModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Login</p>
+          <button class="delete" aria-label="close" id="closeLoginModal"></button>
+        </header>
+        <section class="modal-card-body">
+          <form id="loginForm">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" required>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+          </form>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" type="submit" form="loginForm">Login</button>
+        </footer>
+      </div>
     </div>
-  </div>
-  <!-- register -->
-  <div id="registerModal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Register</p>
-        <button class="delete" aria-label="close" id="closeRegisterModal"></button>
-      </header>
-      <section class="modal-card-body">
-        <form id="registerForm">
-          <label for="username">Username:</label>
-          <input type="text" id="username" required>
-          <label for="email">Email:</label>
-          <input type="email" id="email" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" required>
-        </form>
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success" type="submit" form="registerForm">Register</button>
-      </footer>
+    <!-- register -->
+    <div id="registerModal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Register</p>
+          <button class="delete" aria-label="close" id="closeRegisterModal"></button>
+        </header>
+        <section class="modal-card-body">
+          <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+          </form>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" type="submit" form="registerForm">Register</button>
+        </footer>
+      </div>
     </div>
-  </div>
   </div>
   <script src="index.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -96,12 +113,10 @@
 
       // 获取表单数据
       var username = document.getElementById('username').value;
-      var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
 
       // 存储到localStorage
       localStorage.setItem('username', username);
-      localStorage.setItem('email', email);
       localStorage.setItem('password', password);
       alert('User registered successfully!');
       document.getElementById('registerModal').style.display = "none";

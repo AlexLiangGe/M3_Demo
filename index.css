@@ -55,7 +55,7 @@ body {
   flex-direction: column;
   width: 100%;
   padding: 20px;
-  .button {
+  button {
     margin: 10px 0;
   }
 }

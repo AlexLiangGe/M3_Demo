@@ -12,14 +12,20 @@
 <body>
   <section class="hero is-warning index-box">
     <div class="index-left bold">
-      <p>The best</p>
-      <p>products for</p>
-      <p>your dog</p>
-      <p class="index-desc">Because your dogs deserve to be at their happiest</p>
-      <button class="button is-success is-light is-large index-learn" id="uploadImageButton">Upload Image</button>
+      <p>Please upload </p>
+      <p>an image </p>
+      <p>and descriptive text</p>
+      <p class="index-desc">Mileston 3</p>
+      <div class="input-container" style="display: flex; align-items: flex-start;flex-direction: column;">
+        <input type="text" style="height: 40px;width: 300px;" id="inputContent" placeholder="Enter your content here...">
+        <button class="button is-primary is-large" id="submitContent" style="margin-top: 20px;width: 300px;">Submit Label</button>
+        <button class="button is-success is-light is-large index-learn" id="uploadImageButton" style="width: 300px;">Upload Image</button>
+      </div>
+
       <input type="file" id="imageUpload" accept="image/*" style="display: none;">
     </div>
     <div class="index-right">
+      <div id="content" style="font-weight: bold; font-size: 28px;">label</div>
       <div class="preview-container">
         <img id="imagePreview" src="" alt="Please Upload Image" style="max-width: 100%; height: auto;">
       </div>
@@ -170,6 +176,12 @@
 
       // 清空表单
       this.reset();
+    });
+  </script>
+  <script>
+    document.getElementById('submitContent').addEventListener('click', function () {
+      var inputContent = document.getElementById('inputContent').value;
+      document.getElementById('content').innerText = inputContent;
     });
   </script>
 </body>
