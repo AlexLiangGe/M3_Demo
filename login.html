@@ -12,11 +12,8 @@
       background-image: url('./assets/bg.jpg');
       height: 100vh;
       background-repeat: no-repeat;
-      /* 可选，防止图片平铺 */
       background-position: center center;
-      /* 可选，将图片居中 */
       background-size: cover;
-      /* 可选，让图片填充整个背景 */
       margin: 0;
       padding: 0;
     }
@@ -109,18 +106,13 @@
     });
 
     document.getElementById('registerForm').addEventListener('submit', function (event) {
-      event.preventDefault(); // 阻止表单默认提交行为
-
-      // 获取表单数据
+      event.preventDefault();
       var username = document.getElementById('username').value;
       var password = document.getElementById('password').value;
-
-      // 存储到localStorage
       localStorage.setItem('username', username);
       localStorage.setItem('password', password);
       alert('User registered successfully!');
       document.getElementById('registerModal').style.display = "none";
-      // 清空表单
       this.reset();
     });
   </script>
@@ -134,13 +126,10 @@
     });
 
     document.getElementById('loginForm').addEventListener('submit', function (event) {
-      event.preventDefault(); // 阻止表单默认提交行为
-
-      // 获取表单数据
+      event.preventDefault();
       var username = document.getElementById('loginUsername').value;
       var password = document.getElementById('loginPassword').value;
 
-      // 检查localStorage中是否存在用户
       var storedUsername = localStorage.getItem('username');
       var storedPassword = localStorage.getItem('password');
 
@@ -155,8 +144,6 @@
       } else {
         alert('No user registered yet. Please register first.');
       }
-
-      // 清空表单
       this.reset();
     });
   </script>
