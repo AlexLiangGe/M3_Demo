@@ -17,9 +17,12 @@
       <p>and descriptive text</p>
       <p class="index-desc">Mileston 3</p>
       <div class="input-container" style="display: flex; align-items: flex-start;flex-direction: column;">
-        <input type="text" style="height: 40px;width: 300px;" id="inputContent" placeholder="Enter your content here...">
-        <button class="button is-primary is-large" id="submitContent" style="margin-top: 20px;width: 300px;">Submit Label</button>
-        <button class="button is-success is-light is-large index-learn" id="uploadImageButton" style="width: 300px;">Upload Image</button>
+        <input type="text" style="height: 40px;width: 300px;" id="inputContent"
+          placeholder="Enter your content here...">
+        <button class="button is-primary is-large" id="submitContent" style="margin-top: 20px;width: 300px;">Submit
+          Label</button>
+        <button class="button is-success is-light is-large index-learn" id="uploadImageButton"
+          style="width: 300px;">Upload Image</button>
       </div>
 
       <input type="file" id="imageUpload" accept="image/*" style="display: none;">
@@ -27,7 +30,8 @@
     <div class="index-right">
       <div id="content" style="font-weight: bold; font-size: 28px;">label</div>
       <div class="preview-container">
-        <img id="imagePreview" src="" alt="Please Upload Image" style="max-width: 100%; height: auto;">
+        <img id="imagePreview" src="./assets/img/pic.jpg" alt="Please Upload Image" style="max-width: 100%; height: auto; display: block;">
+        <div id="emptyImagePlaceholder" style="background-color: white; max-width: 100%; height: auto;"></div>
       </div>
     </div>
   </section>
@@ -183,6 +187,22 @@
       var inputContent = document.getElementById('inputContent').value;
       document.getElementById('content').innerText = inputContent;
     });
+  </script>
+  <script>
+    // 获取img元素和空图占位符div
+    var imagePreview = document.getElementById('imagePreview');
+    var emptyImagePlaceholder = document.getElementById('emptyImagePlaceholder');
+
+    // 检查图片src是否为空
+    if (!imagePreview.src || imagePreview.src === '') {
+      // 隐藏img元素，显示空图占位符div
+      imagePreview.style.display = 'none';
+      emptyImagePlaceholder.style.display = 'block';
+    } else {
+      // 显示img元素，隐藏空图占位符div
+      imagePreview.style.display = 'block';
+      emptyImagePlaceholder.style.display = 'none';
+    }
   </script>
 </body>
 
