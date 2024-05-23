@@ -16,10 +16,14 @@
       <p>products for</p>
       <p>your dog</p>
       <p class="index-desc">Because your dogs deserve to be at their happiest</p>
-      <button class="button is-success is-light is-large index-learn">Learn More</button>
+      <button class="button is-success is-light is-large index-learn" id="uploadImageButton">Upload Image</button>
+      <input type="file" id="imageUpload" accept="image/*" style="display: none;">
     </div>
     <div class="index-right">
-      <div class="carousel-container">
+      <div class="preview-container">
+        <img id="imagePreview" src="" alt="Please Upload Image" style="max-width: 100%; height: auto;">
+      </div>
+      <!-- <div class="carousel-container">
         <div class="carousel-track" id="carouselTrack">
           <div class="carousel-item"><img src="./assets/img/pet-01.jpg" alt="Image 1"></div>
           <div class="carousel-item"><img src="./assets/img/pet-02.jpg" alt="Image 2"></div>
@@ -27,7 +31,7 @@
           <div class="carousel-item"><img src="./assets/img/pet-04.jpg" alt="Image 4"></div>
           <div class="carousel-item"><img src="./assets/img/pet-01.jpg" alt="Image 1"></div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -98,7 +102,27 @@
   </section>
 
   <script src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#uploadImageButton").on("click", function () {
+        $("#imageUpload").trigger("click");
+      });
 
+      $("#imageUpload").on("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            $("#imagePreview").attr("src", e.target.result);
+          };
+          reader.readAsDataURL(file);
+        } else {
+          $("#imagePreview").attr("src", "");
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
