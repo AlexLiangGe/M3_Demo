@@ -130,20 +130,15 @@
     });
 
     document.getElementById('registerForm').addEventListener('submit', function (event) {
-      event.preventDefault(); // 阻止表单默认提交行为
-
-      // 获取表单数据
+      event.preventDefault();
       var username = document.getElementById('username').value;
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
-
-      // 存储到localStorage
       localStorage.setItem('username', username);
       localStorage.setItem('email', email);
       localStorage.setItem('password', password);
       alert('User registered successfully!');
       document.getElementById('registerModal').style.display = "none";
-      // 清空表单
       this.reset();
     });
   </script>
@@ -157,13 +152,9 @@
     });
 
     document.getElementById('loginForm').addEventListener('submit', function (event) {
-      event.preventDefault(); // 阻止表单默认提交行为
-
-      // 获取表单数据
+      event.preventDefault();
       var username = document.getElementById('loginUsername').value;
       var password = document.getElementById('loginPassword').value;
-
-      // 检查localStorage中是否存在用户
       var storedUsername = localStorage.getItem('username');
       var storedPassword = localStorage.getItem('password');
 
@@ -177,8 +168,6 @@
       } else {
         alert('No user registered yet. Please register first.');
       }
-
-      // 清空表单
       this.reset();
     });
   </script>
@@ -189,17 +178,12 @@
     });
   </script>
   <script>
-    // 获取img元素和空图占位符div
     var imagePreview = document.getElementById('imagePreview');
     var emptyImagePlaceholder = document.getElementById('emptyImagePlaceholder');
-
-    // 检查图片src是否为空
     if (!imagePreview.src || imagePreview.src === '') {
-      // 隐藏img元素，显示空图占位符div
       imagePreview.style.display = 'none';
       emptyImagePlaceholder.style.display = 'block';
     } else {
-      // 显示img元素，隐藏空图占位符div
       imagePreview.style.display = 'block';
       emptyImagePlaceholder.style.display = 'none';
     }
