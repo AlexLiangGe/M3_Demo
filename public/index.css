@@ -1,0 +1,135 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.index-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+.index-left{
+  font-size: 46px;
+  flex: 1;
+}
+.index-desc{
+  font-weight: normal;
+  font-size: 24px;
+}
+.index-learn{
+  margin-top: 20px;
+}
+.index-right{
+  flex: 1;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  max-height: 400px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease; /* 平滑过渡效果 */
+}
+.carousel-item {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.products-card{
+  height: 100%;
+}
+.products-btns{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin: 0.5rem;
+  }
+}
+
+.card{
+  border: 1px solid transparent;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 1rem 0;
+  display: flex;
+  padding: 20px;
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.card-image-box{
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  max-height: 400px;
+}
+
+.card-image{
+  height: 100%;
+}
+
+.buy-button{
+  width: 100%;
+}
+.evaluate-box{
+  margin: 30px auto;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.evaluate-item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.evaluate-img-figure{
+  width: 256px;
+  height: 256px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+.evaluate-img {
+  width: 256px;
+  height: 100%;
+}
+.evaluate-text {
+  margin: 10px 0 0 6px;
+  text-align: left;
+  font-size: 16px;
+}
+.evaluate-week{
+  margin-left: 6px;
+}
+.footer-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 120px;
+}
+.bold{
+  font-weight: bold;
+}
