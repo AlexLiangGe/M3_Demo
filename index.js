@@ -50,8 +50,8 @@ function showPreviousProduct() {
 
 function init() {
   fetchProductsData();
-  document.getElementById('nextButton').addEventListener('click', showNextProduct);
-  document.getElementById('prevButton').addEventListener('click', showPreviousProduct);
+  // document.getElementById('nextButton').addEventListener('click', showNextProduct);
+  // document.getElementById('prevButton').addEventListener('click', showPreviousProduct);
 }
 
 async function fetchProductsData() {
