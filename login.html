@@ -10,84 +10,56 @@
 </head>
 
 <body>
-  <section class="hero is-warning index-box">
-    <div class="index-left bold">
-      <p>The best</p>
-      <p>products for</p>
-      <p>your dog</p>
-      <p class="index-desc">Because your dogs deserve to be at their happiest</p>
-      <button class="button is-success is-light is-large index-learn" id="uploadImageButton">Upload Image</button>
-      <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+  <div class="products-btns">
+    <button id="registerButton" class="button is-dark">Register</button>
+    <button id="loginButton" class="button is-dark">Login</button>
+  </div>
+  <div>
+    <!-- login -->
+  <div id="loginModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Login</p>
+        <button class="delete" aria-label="close" id="closeLoginModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <form id="loginForm">
+          <label for="loginUsername">Username:</label>
+          <input type="text" id="loginUsername" required>
+          <label for="loginPassword">Password:</label>
+          <input type="password" id="loginPassword" required>
+        </form>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" type="submit" form="loginForm">Login</button>
+      </footer>
     </div>
-    <div class="index-right">
-      <div class="preview-container">
-        <img id="imagePreview" src="" alt="Please Upload Image" style="max-width: 100%; height: auto;">
-      </div>
+  </div>
+  <!-- register -->
+  <div id="registerModal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Register</p>
+        <button class="delete" aria-label="close" id="closeRegisterModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <form id="registerForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" required>
+        </form>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" type="submit" form="registerForm">Register</button>
+      </footer>
     </div>
-  </section>
-
-  <section id="products" class="section">
-    <div class="products-box">
-      <div class="products-card">
-        <div id="product-carousel" class="product-carousel"></div>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="hero is-warning">
-    <nav class="level evaluate-box">
-      <div class="level-item has-text-centered">
-        <div class="evaluate-item">
-          <figure class="image is-256x256 evaluate-img-figure">
-            <img class="evaluate-img" src="./assets/img/custom-01.jpg">
-          </figure>
-          <div class="evaluate-text bold">
-            <p>@custom1</p>
-            <p>my dog loves these shampoos!</p>
-          </div>
-          <p class="evaluate-week">4 week ago</p>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div class="evaluate-item">
-          <figure class="image is-256x256 evaluate-img-figure">
-            <img class="evaluate-img" src="./assets/img/custom-02.jpg">
-          </figure>
-          <div class="evaluate-text bold">
-            <p>@custom2</p>
-            <p>my dog loves these shampoos!</p>
-          </div>
-          <p class="evaluate-week">4 week ago</p>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div class="evaluate-item">
-          <figure class="image is-256x256 evaluate-img-figure">
-            <img class="evaluate-img" src="./assets/img/custom-03.jpg">
-          </figure>
-          <div class="evaluate-text bold">
-            <p>@custom3</p>
-            <p>my dog loves these shampoos!</p>
-          </div>
-          <p class="evaluate-week">4 week ago</p>
-        </div>
-      </div>
-    </nav>
-  </section>
-  <section class="hero is-warning footer-box">
-    <div class="footer-item">
-      <p class="bold">BK PETS</p>
-      <p>©️ 2024-2028</p>
-      <p>Privacy - Terms</p>
-    </div>
-    <div class="footer-item">
-      <p class="bold">Follow us on</p>
-      <p>instagram</p>
-      <p>Facebook</p>
-    </div>
-  </section>
-
+  </div>
+  </div>
   <script src="index.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
@@ -161,6 +133,7 @@
         if (username === storedUsername && password === storedPassword) {
           alert('Login successful!');
           document.getElementById('loginModal').style.display = "none";
+          window.location.href = 'index.html';
         } else {
           alert('Incorrect username or password.');
         }
